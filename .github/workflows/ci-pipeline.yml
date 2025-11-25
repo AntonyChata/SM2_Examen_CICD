@@ -51,12 +51,19 @@ jobs:
       - name: Run Unit Tests
         run: flutter test
 
-      # 6. Construir el Instalable (Build)
+      # 6. Clear Gradle Cache (Force AGP Update)
+      - name: Clear Gradle Cache
+        run: |
+          rm -rf ~/.gradle/caches
+          rm -rf android/.gradle
+          rm -rf build
+
+      # 7. Construir el Instalable (Build)
       # Generar el APK de Android.
       - name: Build Application
         run: flutter build apk --release
 
-      # 7. Subir el Artefacto (Entregable final)
+      # 8. Subir el Artefacto (Entregable final)
       # Esto permite descargar el APK desde GitHub.
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
