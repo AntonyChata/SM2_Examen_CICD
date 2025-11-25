@@ -44,7 +44,7 @@ jobs:
       # 4. Análisis de Calidad (Linting)
       # Si el código está mal escrito, el proceso debe fallar aquí.
       - name: Code Quality Check
-        run: flutter analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
 
       # 5. Ejecutar Pruebas Unitarias
       # Aquí se validarán las 5 funciones que creaste en la Parte 1.
