@@ -1,0 +1,114 @@
+# ========================================
+# ARCHIVOS SENSIBLES (MUY IMPORTANTE)
+# ========================================
+# NUNCA subir llaves privadas o archivos secretos
+*.jks
+*.keystore
+key.properties
+
+# Firebase Admin (service account)
+service_account.json
+assets/keys/
+lib/servicios/servicio_openai.dart
+
+# Variables de entorno
+.env
+.env.*
+
+# ========================================
+# MISCELLANEOUS
+# ========================================
+*.class
+*.log
+*.pyc
+*.swp
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.lock
+
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ========================================
+# INTELLIJ / ANDROID STUDIO
+# ========================================
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# ========================================
+# VISUAL STUDIO CODE
+# (solo ignoramos archivos locales, no toda la carpeta)
+# ========================================
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# ========================================
+# FLUTTER / DART / PUB
+# ========================================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# API docs
+**/doc/api/
+
+# ========================================
+# iOS
+# ========================================
+**/ios/Flutter/.last_build_id
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/App.framework
+ios/ServiceDefinitions.json
+ios/Runner.xcworkspace/
+ios/Runner.xcodeproj/project.xcworkspace/
+
+# ========================================
+# ANDROID
+# ========================================
+/android/.gradle
+/android/captures/
+/android/local.properties
+
+# Output builds
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# ========================================
+# SIMBOLICACIÓN
+# ========================================
+app.*.symbols
+
+# ========================================
+# OBFUSCATION
+# ========================================
+app.*.map.json
+
+# ========================================
+# OTROS
+# ========================================
+# Archivos generados por el sistema operativo
+Thumbs.db
+
+# Archivos de dependencias de macOS
+*.xcuserstate
+*.xcworkspace
+xcuserdata/

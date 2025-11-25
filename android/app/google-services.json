@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "326421196221",
+    "project_id": "my-smii-sosmascota",
+    "storage_bucket": "my-smii-sosmascota.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326421196221:android:5141d310e9503ce35276d4",
+        "android_client_info": {
+          "package_name": "com.smii.sosmascota"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgr12r0QnU3_CoKKPqcJN2Bq9sLQhmNIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

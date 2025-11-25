@@ -1,0 +1,61 @@
+name: Mobile CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    # IMPORTANTE: Usamos ubuntu-latest para compilar Android/Web gratis.
+    # No usar macos-latest (es de pago o consume créditos rápido).
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descargar el código del repositorio
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # 2. Configurar el entorno (Java para Android, Flutter, o Node)
+      # --- FLUTTER CONFIGURATION ---
+      
+      # OPCIÓN A: FLUTTER
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.0'
+      
+      # Java es necesario para compilar APK de Android
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      # 3. Instalar Dependencias
+      - name: Install Dependencies
+        run: flutter pub get
+
+      # 4. Análisis de Calidad (Linting)
+      # Si el código está mal escrito, el proceso debe fallar aquí.
+      - name: Code Quality Check
+        run: flutter analyze
+
+      # 5. Ejecutar Pruebas Unitarias
+      # Aquí se validarán las 5 funciones que creaste en la Parte 1.
+      - name: Run Unit Tests
+        run: flutter test
+
+      # 6. Construir el Instalable (Build)
+      # Generar el APK de Android.
+      - name: Build Application
+        run: flutter build apk --release
+
+      # 7. Subir el Artefacto (Entregable final)
+      # Esto permite descargar el APK desde GitHub.
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release
+          path: build/app/outputs/flutter-apk/app-release.apk
